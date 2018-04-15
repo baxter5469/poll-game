@@ -18,3 +18,9 @@ while True:
         continue
 for x in names.items():
     print(x)
+if len(names) > 0:
+    try:
+        sum(names.values()) / len(names)
+        print
+    except:
+        print("Sorry an error occured!")
