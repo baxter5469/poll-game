@@ -16,11 +16,7 @@ while True:
         except:
             print("Only the number no letters!")
         continue
-for x in names.items():
-    print(x)
 if len(names) > 0:
-    try:
-        sum(names.values()) / len(names)
-        print
-    except:
-        print("Sorry an error occured!")
+    print("The average month from your inputs is: " + sum(names.values()) / len(names))
+else:
+    pass
