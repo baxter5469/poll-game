@@ -1,6 +1,7 @@
-''' Poll Game v1.1 By Andrew Ault
+''' Poll Game v1.5 By Andrew Ault
 4/12/18
 '''
+import json
 names = {}
 while True:
     username = input(str("Please type your name: ")).lower()
@@ -16,9 +17,10 @@ while True:
         try:
             userinput = int(userinput)
             names[username] = userinput
+            with open('file.txt', 'w') as file:
+                file.write(json.dumps(names))
         except:
             print("Only the number no letters!")
-        continue
 if len(names) > 0:
     print("The average month from your inputs is: " + str(sum(names.values()) / len(names)))
 else:
