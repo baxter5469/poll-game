@@ -1,9 +1,12 @@
-''' Poll Game v1.0 By Andrew Ault
+''' Poll Game v1.1 By Andrew Ault
 4/12/18
 '''
 names = {}
 while True:
-    username = input(str("Please type your name: "))
+    username = input(str("Please type your name: ")).lower()
+    if username.lower() in names:
+        print("Name already in the list, Try again.")
+        continue
     if username == "quit":
         break
     if len(username) < 1:
@@ -17,6 +20,6 @@ while True:
             print("Only the number no letters!")
         continue
 if len(names) > 0:
-    print("The average month from your inputs is: " + sum(names.values()) / len(names))
+    print("The average month from your inputs is: " + str(sum(names.values()) / len(names)))
 else:
     pass
